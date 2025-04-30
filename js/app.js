@@ -1,3 +1,5 @@
+let alugados = 1;
+
 function alterarStatus(id){
     
     let jogoClicado = document.getElementById(`game-${id}`);
@@ -10,21 +12,20 @@ function alterarStatus(id){
         imagem.classList.remove('dashboard__item__img--rented') ;
         botao.classList.remove('dashboard__item__button--return');
         botao.textContent = 'alugar';
+        alugados--
         }
     }else{
         imagem.classList.add('dashboard__item__img--rented');
         botao.classList.add('dashboard__item__button--return');
         botao.textContent = 'devolver';
+        alugados++
     }
 
-
+    jogosAlugados()
 
 }
 
 
 function jogosAlugados(){
-    let alugados = jogoClicado.querySelector('.dashboard__item__button--return');
-    let nomeJogo = jogoClicado.querySelector('.dashboard__item__name');
-
-    return console.log(nomeJogo.textContent);
+console.log(`os jogos alugados são ${alugados}`)
 }
